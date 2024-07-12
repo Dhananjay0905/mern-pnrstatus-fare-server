@@ -13,7 +13,11 @@ const port = 8000;
 app.use(express.json());
 
 // Enable Cors
-app.use(cors());
+app.use(cors({
+    origin: ["https://mern-pnrstatus-fare.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 // Registration endpoint
 app.post('/register', async (req, res) => {
