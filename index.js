@@ -15,7 +15,7 @@ app.use(express.json());
 // Enable Cors
 app.use(cors({
     origin: ["https://mern-pnrstatus-fare.vercel.app/"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST"],
     credentials: true
 }));
 
