@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Enable Cors
 app.use(cors({
-    origin: ["https://mern-pnrstatus-fare.vercel.app", "http://localhost:3000"],
+    origin: ["https://mern-pnrstatus-fare-frontend.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
