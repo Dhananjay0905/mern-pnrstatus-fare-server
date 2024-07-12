@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Enable Cors
 app.use(cors({
-    origin: ["https://mern-pnrstatus-fare.vercel.app"],
+    origin: ["https://mern-pnrstatus-fare.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
@@ -66,7 +66,7 @@ app.post('/', async (req, res) => {
         const user = await User.findOne({ username });
 
         if (!user) {
-            return res.status(401).json({ error: 'Invalid Username or Password' });
+            return res.status(401).json({ error: 'Username not found' });
         }
 
         if (!(await bcrypt.compare(password, user.password))) {
